@@ -1,0 +1,36 @@
+/*@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+*/
+
+body { 
+    
+    padding-bottom: 120px; }
+
+.featuredImage {
+    margin-bottom: 15px;
+}
+
+.sharp {
+    border-radius:0;
+}
+.label.wikkired {
+    background-color: #de1d24;
+}
+
+.wikkigray {
+    background-color: #323232;
+    opacity: 0.8;
+}
+
+.noborder {
+    border-style: none;
+}
+.carousel-caption h1 {
+    margin-bottom: 13px;
+}
+
+
+
