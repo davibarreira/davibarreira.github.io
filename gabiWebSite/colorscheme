@@ -1,0 +1,12 @@
+background = 'use image texture'
+background-color = EBE3D6
+background-color2 = C4B39
+blue = 02ACC6
+blue-similar = 00ABBD
+pink = F73363
+form-selected =F0E7D6
+font-form-selected = AEA594
+form-not-selected =DAD1C0
+font-form-not-selected = BFB6A5
+selected-icon-facebook = DF4334
+unselected-icon-facebook= DAD4C6
