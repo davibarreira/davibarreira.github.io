@@ -1,0 +1,31 @@
+body {
+  font-family: 'Inconsolata', sans-serif ;
+}
+h1.davi {
+  font-family: 'Cutive Mono','Inconsolata', sans-serif ;
+  font-weight: 600;
+  color: #333333;
+  border-bottom: 1px solid;
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+}
+
+li.davi > a {
+  font-size: 17px;
+  text-align: left;
+  padding: 12px 25px 12px 5px;
+  color: #009DEC;
+}
+
+h1.davi-sidebar {
+  font-family: 'Cutive Mono','Inconsolata', sans-serif ;
+  font-weight: 600;
+  color: #009DEC;
+  border-bottom: 1px solid;
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #e3f4fc;
+}
