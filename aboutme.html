@@ -47,9 +47,7 @@
       </div>
 
       <div class="col-md-8">
-        <!--<img src="images/img-cylinder.png">-->
-          <!--<canvas id="daviCanvas" resize="false"></canvas> -->
-          <canvas id="daviCanvas" resize></canvas> 
+        <h1 class='davi'>Quem sou</h1>
         
       </div>
     </div>
@@ -61,18 +59,6 @@
 
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/paper-full.js"></script>
-  <script type="text/paperscript" canvas="daviCanvas">
-    var path = new Path();
-    // Give the stroke a color
-    path.strokeColor = 'black';
-    var start = new Point(100, 100);
-    // Move to start and draw a line from there
-    path.moveTo(start);
-    // Note the plus operator on Point objects.
-    // PaperScript does that for us, and much more!
-    path.lineTo(start + [ 100, -50 ]);
-  </script>
 </body>
 
 
