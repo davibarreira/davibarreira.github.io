@@ -50,6 +50,7 @@
         <!--<img src="images/img-cylinder.png">-->
           <!--<canvas id="daviCanvas" resize="false"></canvas> -->
           <canvas id="daviCanvas" resize></canvas> 
+
         
       </div>
     </div>
@@ -63,15 +64,64 @@
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/paper-full.js"></script>
   <script type="text/paperscript" canvas="daviCanvas">
-    var path = new Path();
-    // Give the stroke a color
+    var point1 = new Point(50, 50);
+    var point2 = new Point(100, 50);
+    var point3 = point2 - new Point (10,10);
+    var point4 = point2 - new Point (10,-10);
+    var zero   = point2 - point2;
+    var vector = point2 - point1;
+    var path = new Path(point1,point2,point3,point2,point4);
     path.strokeColor = 'black';
-    var start = new Point(100, 100);
-    // Move to start and draw a line from there
-    path.moveTo(start);
-    // Note the plus operator on Point objects.
-    // PaperScript does that for us, and much more!
-    path.lineTo(start + [ 100, -50 ]);
+    var arrow  = new Symbol(path);
+    var children = project.activeLayer.children;
+
+    path.remove();
+
+    numberArrows = 120;
+    for (var i = 0; i < numberArrows; i++ ){
+        var instance = new PlacedSymbol(arrow);
+        instance.scale(0.50);
+        instance.position = Point.random()*view.size;
+    }
+    
+    var vector = new Point({
+        angle: 45,
+        length: 0
+    });
+
+    var mouseVector = vector.clone();
+
+    function onMouseDrag(event) {
+        mouseVector = view.center - event.point;
+    }
+
+    function onFrame(event){
+        for (i in children){
+            children[i].position.x += 10;
+            children[i].position.y += 0;
+            keepInView(children[i]);
+        }
+    }
+    function keepInView(item) {
+        var position = item.position;
+        var itemBounds = item.bounds;
+        var bounds = view.bounds;
+        if (itemBounds.left > bounds.width) {
+            position.x = -item.bounds.width;
+        }
+
+        if (position.x < -itemBounds.width) {
+            position.x = bounds.width;
+        }
+
+        if (itemBounds.top > view.size.height) {
+            position.y = -itemBounds.height;
+        }
+
+        if (position.y < -itemBounds.height) {
+            position.y = bounds.height  + itemBounds.height / 2;
+        }
+    }
   </script>
 </body>
 
