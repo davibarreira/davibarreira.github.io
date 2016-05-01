@@ -86,19 +86,20 @@
     
     var vector = new Point({
         angle: 45,
-        length: 0
+        length: 5
     });
 
     var mouseVector = vector.clone();
 
-    function onMouseDrag(event) {
-        mouseVector = view.center - event.point;
+    function onMouseMove(event) {
+        mouseVector = -view.center + event.point;
+        vector      = mouseVector/20;
     }
 
     function onFrame(event){
         for (i in children){
-            children[i].position.x += 10;
-            children[i].position.y += 0;
+            children[i].position.x += vector.x;
+            children[i].position.y += vector.y;
             keepInView(children[i]);
         }
     }
