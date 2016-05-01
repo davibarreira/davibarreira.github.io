@@ -82,25 +82,43 @@
         var instance = new PlacedSymbol(arrow);
         instance.scale(0.50);
         instance.position = Point.random()*view.size;
+        instance.angle    = 0; // Add angle property
     }
     
     var vector = new Point({
         angle: 45,
-        length: 5
+        length: 10
     });
-
+    //console.log(children[10].angle);
     var mouseVector = vector.clone();
 
     function onMouseMove(event) {
         mouseVector = -view.center + event.point;
-        vector      = mouseVector/20;
+        vector = mouseVector/30;
     }
+    var rotationRate;
 
     function onFrame(event){
         for (i in children){
             children[i].position.x += vector.x;
             children[i].position.y += vector.y;
             keepInView(children[i]);
+            rotationRate = (vector.angle - children[i].angle)/3;
+            //console.log(rotationRate);
+            if (vector.angle > 90 && children[i].angle <-90){
+                rotationRate = -(360 - vector.angle + children[i].angle)/10;
+                children[i].angle+=360 + rotationRate;
+            }
+            if (vector.angle < -90 && children[i].angle >90){
+                rotationRate = (360 + vector.angle - children[i].angle)/10;
+                children[i].angle+=-360 + rotationRate;
+            }
+            if (vector.angle !== children[i].angle){
+                children[i].rotate(rotationRate);
+                children[i].angle+=rotationRate;
+            }
+
+            
         }
     }
     function keepInView(item) {
