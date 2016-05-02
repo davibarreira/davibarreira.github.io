@@ -49,7 +49,24 @@
       <div class="col-md-8">
         <!--<img src="images/img-cylinder.png">-->
           <!--<canvas id="daviCanvas" resize="false"></canvas> -->
-          <canvas id="daviCanvas" resize></canvas> 
+          <div class='carousel slide hidden-xs' data-ride='carousel'>
+            <div class='carousel-inner'>
+
+              <div class='item active'>
+                <img src="images/res-img-cylinder.png" style="display:block" >
+              </div>
+              <div class='item'>
+                <img src="images/res-img-dam3D.png" style="display:block" >
+              </div>
+              <div class='item'>
+                <img src="images/res-img-hrap.png" style="display:block" >
+              </div>
+              <div class='item'>
+                <img src="images/res-img-edificio3D.png" style="display:block" >
+              </div>
+            </div>
+          </div>
+          <!--<canvas id="daviCanvas" resize></canvas> -->
 
         
       </div>
@@ -64,111 +81,65 @@
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/paper-full.js"></script>
   <script type="text/paperscript" canvas="daviCanvas">
-    var point1 = new Point(50, 50);
-    var point2 = new Point(100, 50);
-    var point3 = point2 - new Point (10,10);
-    var point4 = point2 - new Point (10,-10);
-    var zero   = point2 - point2;
-    var vector = point2 - point1;
-    
-    var arrow  = new Symbol(path);
-    var children = project.activeLayer.children;
-    var path = []
+var raster = new Raster('profile');
 
+// Hide the raster:
+raster.visible = false;
 
-    numberArrows = 10;
-    for (var i = 0; i < numberArrows; i++ ){
-        path[i] = new Path(point1,point2,point3,point2,point4);
-        path[i].strokeColor = 'black';
-        path[i].scale(0.50);
-        path[i].position = Point.random()*view.size;
-        path[i].angle    = 0; // Add angle property
-    }
-    
-    var vector = new Point({
-        angle: 45,
-        length: 10
-    });
-    //console.log(children[10].angle);
-    var mouseVector = vector.clone();
+// The size of our grid cells:
+var gridSize = 10;
 
-    var myCircle = new Path.Circle(view.center, 50);
-    myCircle.strokeColor = 'black';
-    myCircle.fillColor   = 'white';
-    
-    var path1 = children[0];
+// Space the cells by 120%:
+var spacing = 1.2;
 
-    console.log(path1.position);
-    
-    function showIntersections(path1, path2) {
-    var intersections = path1.getIntersections(path2);
-    for (var i = 0; i < intersections.length; i++) {
-        new Path.Circle({
-            center: intersections[i].point,
-            radius: 5,
-            fillColor: '#009dec'
-        });
-    }
-}
-    
-    function onMouseMove(event) {
-        mouseVector = -view.center + event.point;
-        vector = mouseVector/30;
-    }
-    var rotationRate;
+// As the web is asynchronous, we need to wait for the raster to load
+// before we can perform any operation on its pixels.
+raster.on('load', function() {
+	// Since the example image we're using is much too large,
+	// and therefore has way too many pixels, lets downsize it to
+	// 40 pixels wide and 30 pixels high:
+	raster.size = new Size(40, 40);
 
-    function onFrame(event){
-        for (var i =-0;i<numberArrows;i++){
-            children[i].position.x += vector.x;
-            children[i].position.y += vector.y;
-            keepInView(children[i]);
-            //showIntersections(children[0], )
-            rotationRate = (vector.angle - children[i].angle)/3;
-            //console.log(rotationRate);
-            if (vector.angle > 90 && children[i].angle <-90){
-                rotationRate = -(360 - vector.angle + children[i].angle)/10;
-                children[i].angle+=360 + rotationRate;
-            }
-            if (vector.angle < -90 && children[i].angle >90){
-                rotationRate = (360 + vector.angle - children[i].angle)/10;
-                children[i].angle+=-360 + rotationRate;
-            }
-            if (vector.angle !== children[i].angle){
-                children[i].rotate(rotationRate);
-                children[i].angle+=rotationRate;
-            }
-            var dist = children[i].position-view.center;
-            if (dist.length<50){
-                children[i].position.x += -vector.x;
-                children[i].position.y += -vector.y;
-                
-            }
+	for (var y = 0; y < raster.height; y++) {
+		for(var x = 0; x < raster.width; x++) {
+			// Get the color of the pixel:
+			var color = raster.getPixel(x, y);
 
-            
-        }
-    }
-    function keepInView(item) {
-        var position = item.position;
-        var itemBounds = item.bounds;
-        var bounds = view.bounds;
+			// Create a circle shaped path:
+			var path = new Path.Circle({
+				center: new Point(x, y) * gridSize,
+				radius: gridSize / 2 / spacing,
+				fillColor: 'black'
+			});
+
+			// Scale the path by the amount of gray in the pixel color:
+			path.scale(1 - color.gray);
+		}
+	}
+
+	// Move the active layer to the center of the view, so all 
+	// the created paths in it appear centered.
+	project.activeLayer.position = view.center;
+	children = project.activeLayer.children;
  
-        //showIntersections(path2,path3);
-        if (itemBounds.left > bounds.width) {
-            position.x = -item.bounds.width;
-        }
+});
+	var children = project.activeLayer.children;
 
-        if (position.x < -itemBounds.width) {
-            position.x = bounds.width;
-        }
-
-        if (itemBounds.top > view.size.height) {
-            position.y = -itemBounds.height;
-        }
-
-        if (position.y < -itemBounds.height) {
-            position.y = bounds.height  + itemBounds.height / 2;
-        }
+  var active =0;
+  function onMouseDown(event){
+    active = 1;
+  }
+  function onFrame(event){
+    if (active == 1){
+      for (var i=0;i<10;i++){
+        if (children[i].position.y>view.size.height-30){
+          
+      } else{
+          children[i].position.y+=5*event.time*event.time;  
+      }
     }
+    }
+  }
   </script>
 </body>
 
