@@ -36,7 +36,7 @@ h1.davi-sidebar {
   margin-bottom: 5px;
   padding-bottom: 8px;
 }
-.nav > li > a:hover, .nav > li > a:focus {
+.nav > li > a:hover, .nav > li > a:focus, .nav > li.active {
     text-decoration: none;
     background-color: #e3f4fc;
 }
