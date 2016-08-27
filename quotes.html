@@ -9,10 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.ico" />
+
     <title>Davi Sales Barreira - Personal Website</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!--[> Bootstrap Core CSS <]-->
     <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
     <!--<link href="css/heroic-features.css" rel="stylesheet">-->
@@ -39,7 +43,7 @@
         <a href="index.html"><h1 class='davi-sidebar'>Davi.SB</h1></a>
         <ul class='nav navbar-stacked'>
           <li class='davi'><a href="aboutme.html">Quem sou</a></li>
-          <li class='davi'><a href="publications.html">Trabalhos</a></li>
+          <li class='davi active'><a href="publications.html">Trabalhos</a></li>
           <li class='davi'><a href="cv.html">Currículo</a></li>
           <li class='davi'><a href="quotes.html">Quotes</a></li>
           <!--<li class='davi'>About Me</li>-->
@@ -47,35 +51,34 @@
         </ul>
       </div>
 
-      <div class="col-md-10 davi-col">
-        <!--<img src="images/img-cylinder.png">-->
-        <div class="row">
-          <div class='carousel slide hidden-xs' data-ride='carousel'>
-            <div class='carousel-inner'>
+      <div class="col-md-9 davi-col">
+        <h1 class='davi'>Quotes</h1>
+        <div class='row'>
+          <div class='col-md-12'>
+          
+            <blockquote>
+              <p>In theory there is no difference
+              between theory and practice. 
+              But, in practice, there is.</p>
+              <footer>Jan L. A. van de Snepscheut
+                <cite title="Source Title"></cite>
+              </footer>
+            </blockquote>
 
-              <div class='item active' id="item1">
-                <img src="images/res-img-cylinder.png" style="display:block" >
-              </div>
-              <div class='item' id="item2">
-                <img src="images/res-img-dam3D.png" style="display:block" >
-              </div>
-              <div class='item' id="item3">
-                <img src="images/res-img-hrap.png" style="display:block" >
-              </div>
-              <div class='item' id="item4">
-                <img src="images/res-img-edificio3D.png" style="display:block" >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-          <!--<canvas id="daviCanvas" resize class="hidden-sm hidden-xs"></canvas> -->
-          </div>
-          <div class="col-md-4 text-right hidden-sm hidden-xs">
-            <h3 class="text-right">Amostra de simulações</h3>
-            <p class="text-justify text-right" id="p1">Acima, alguns dos trabalhos que eu fiz com simulações numéricas (e.g:  escoamento ao redor de cilindro, fluxo sobre uma barragem, 
-            lagoa de alta taxa, vento ao redor de um edifício)</p>
+            <blockquote>
+              <p>History doesn't repeat itself, but it does rhyme.</p>
+              <footer>Mark Twain
+                <cite title="Source Title"></cite>
+              </footer>
+            </blockquote>
+
+            <blockquote>
+              <p>To begin depriving death of its greatest advantage over us, let us adopt a way clean contrary to that common one; let us deprive death of its strangeness, let us frequent it, let us get used to it; let us have nothing more often in mind than death... We do not know where death awaits us: so let us wait for it everywhere.</p>
+              <footer>Michel de Montaigne
+                <cite title="Source Title">Os ensaios</cite>
+              </footer>
+            </blockquote>
+          
           </div>
         </div>
       </div>
@@ -88,9 +91,6 @@
 
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/paper-full.js"></script>
-  <script type="text/paperscript" canvas="daviCanvas">
-  </script>
 </body>
 
 
