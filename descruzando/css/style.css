@@ -7,11 +7,24 @@ h1 {
   /*font-family: 'Cutive Mono','Inconsolata', sans-serif ;*/
   font-family: 'Source Serif Pro', serif;
   font-weight: 600;
-  color: #333333;
+  font-size: 53px;
+  color: #00072d;
   /*border-bottom: 1px solid;*/
   margin-bottom: 5px;
   padding-bottom: 8px;
 }
+
+p {
+  /*font-family: 'Cutive Mono','Inconsolata', sans-serif ;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000000;
+  /*border-bottom: 1px solid;*/
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+}
+
 
 a:hover, a:focus {
   
@@ -68,15 +81,18 @@ canvas[resize] {
   }
   
 }
+
+
+
 .jumbotron {
 background-image: url("../images/SiteFrontPage2.png");
 background-size: cover;}
+
+.jumboimage {
+  margin-top: 25px;
+}
 
 h1.jumbodavi, p.jumbodavi {
   color: #FFFFFF;
 }
 
-.jumboimage {
-  margin-top: 25px;
-  
-}
