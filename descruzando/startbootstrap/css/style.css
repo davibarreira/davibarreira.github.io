@@ -18,7 +18,26 @@ p {
   /*font-family: 'Cutive Mono','Inconsolata', sans-serif ;*/
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
+  color: #000000;
+  /*border-bottom: 1px solid;*/
+}
+h2 {
+  /*font-family: 'Cutive Mono','Inconsolata', sans-serif ;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  color: #00072d;
+  /*border-bottom: 1px solid;*/
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+}
+
+h3 {
+  /*font-family: 'Cutive Mono','Inconsolata', sans-serif ;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
   color: #000000;
   /*border-bottom: 1px solid;*/
   margin-bottom: 5px;
@@ -99,5 +118,9 @@ h1.jumbodavi, p.jumbodavi {
 .navbar-brand-custom {
   padding-top: 10px;
   
+}
+
+hr.hrwhite {
+  border-color: #ffffff;
 }
 
