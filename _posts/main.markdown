@@ -1,4 +1,5 @@
 ---
+layout: post
 abstract: |
     The main goal of these notes is to present an introduction to the
     transport inequalities, which consist of methods of using Optimal
