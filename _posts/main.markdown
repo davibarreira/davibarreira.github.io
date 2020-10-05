@@ -14,6 +14,7 @@ author:
 bibliography:
 - 'probability\_ot.bib'
 title: 'Probability & Optimal Transport'
+categories: jekyll update
 ---
 
 \maketitle 

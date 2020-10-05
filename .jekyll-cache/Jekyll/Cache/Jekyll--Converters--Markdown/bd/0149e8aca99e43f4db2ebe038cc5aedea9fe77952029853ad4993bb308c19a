@@ -1,0 +1,19 @@
+I"�<h1 id="introduction">Introduction</h1>
+
+<p>Given two probability distributions $\mu,\nu$, there are many situations
+where one is interested in defining a way of measuring the distance
+between them. The Wasserstein distance is a metric that arises from the
+idea of optimal transport, and which has being gaining attention in
+Statistics and Machine Learning. One prominent example is the so called
+Wasserstein Generative Adversarial Network (WGAN), which uses this
+metric to evaluate how well the model generated distribution
+approximates the "real" distribution of the data. As will be shown
+shortly, the Wasserstein metric has several advantages compared to other
+metrics.</p>
+
+<p>Finally, we can go back to our example, and conclude that if
+$X_1,…,X_n \in [a,b]$ are $i.i.d$. Then, for $S_n = X_1 + … + X_n$,
+we have
+\(\mu^n(|S_n - m_{S_\nu} | &gt; r + r_o) \leq 2 e^{\frac{- 2r^2}{n L^2}}\)</p>
+
+:ET
