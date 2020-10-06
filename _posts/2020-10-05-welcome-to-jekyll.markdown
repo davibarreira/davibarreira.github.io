@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: posts
+tags: markdown jekyll mathjax latex
 title:  "Testando"
 date:   2020-10-05 17:38:07 -0300
 categories: jekyll update

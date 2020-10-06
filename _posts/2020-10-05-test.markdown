@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: posts
+tags: markdown jekyll mathjax latex
 title:  "Manul"
 date:   2020-10-05 17:38:07 -0300
 categories: jekyll update
@@ -7,21 +8,11 @@ categories: jekyll update
 Introduction
 ============
 
-Given two probability distributions $\mu,\nu$, there are many situations
-where one is interested in defining a way of measuring the distance
-between them. The Wasserstein distance is a metric that arises from the
-idea of optimal transport, and which has being gaining attention in
-Statistics and Machine Learning. One prominent example is the so called
-Wasserstein Generative Adversarial Network (WGAN), which uses this
-metric to evaluate how well the model generated distribution
-approximates the \"real\" distribution of the data. As will be shown
-shortly, the Wasserstein metric has several advantages compared to other
-metrics.
+Testando o uso de MathJax
 
-Finally, we can go back to our example, and conclude that if
-$X_1,...,X_n \in [a,b]$ are $i.i.d$. Then, for $S_n = X_1 + ... + X_n$,
-we have
-$$\mu^n(|S_n - m_{S_\nu} | > r + r_o) \leq 2 e^{\frac{- 2r^2}{n L^2}}$$
+$$
+x = y^2
+$$
 
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
