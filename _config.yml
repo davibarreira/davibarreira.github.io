@@ -282,4 +282,4 @@ defaults:
 
       # math_engine: mathjax
 
-theme: jekyll-theme-cayman
+      # theme: jekyll-theme-cayman
