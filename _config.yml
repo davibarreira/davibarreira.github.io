@@ -281,3 +281,5 @@ defaults:
       related: true
 
       # math_engine: mathjax
+
+theme: jekyll-theme-cayman
