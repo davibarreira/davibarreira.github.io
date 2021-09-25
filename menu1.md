@@ -7,7 +7,6 @@ rss = "A short description of the page which would serve as **blurb** in a `RSS`
 @def tags = ["syntax", "code"]
 
 # Working with code blocks
-
 \toc
 
 ## Live evaluation of code blocks
