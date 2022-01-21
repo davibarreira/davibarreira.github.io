@@ -15,7 +15,8 @@ I'm one of the developers of the package [OptimalTransport.jl](https://github.co
 In this website I have some of my blog posts, which can also
 be found elsewhere:
 
-* My publication page [Coffee in a Klein Bottle](https://medium.com/coffee-in-a-klein-bottle)
-* [Github](https://github.com/davibarreira).
+* [Coffee in a Klein Bottle](https://medium.com/coffee-in-a-klein-bottle) - My publication at Medium;
+* Open Source contributions at my [Github](https://github.com/davibarreira) page;
+* [JuliaDev Brasil](https://medium.com/coffee-in-a-klein-bottle) - Website for promoting Julia programming in Brazil.
 
 \tableofcontents <!-- you can use \toc as well -->
