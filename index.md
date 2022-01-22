@@ -1,7 +1,7 @@
 @def title = "DSB"
 @def tags = ["syntax", "code"]
 
-# Welcome to my personal
+# Welcome to my personal website
 
 I'm a PhD student at the [School of Applied Mathematics at Fundação Getúlio Vargas (EMAp)](https://emap.fgv.br/)
 since beginning of 2021.
